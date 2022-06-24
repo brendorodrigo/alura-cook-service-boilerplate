@@ -12,7 +12,6 @@ RUN pip install --user --no-cache-dir -r requirements.txt
 
 COPY --chown=user . ./
 
-
 RUN python \
         -m grpc_tools.protoc \
         -I ${GRPC_PROTOBUF_PATH} \

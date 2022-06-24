@@ -8,7 +8,6 @@ NETWORK_ID=$(shell docker network ls -qf "name=${NETWORK_NAME}")
 .PHONY: build
 build:
 	@docker-compose build --pull
-	ls -la app/grpc/src
 	$(MAKE) grpc
 
 .PHONY: grpc
@@ -28,3 +27,12 @@ network:
 	else \
 		docker network create -d bridge ${NETWORK_NAME}; \
 	fi
+
+up:
+	@docker-compose up
+
+up-silent:
+	@docker-compose up -d
+
+down:
+	@docker-compose down

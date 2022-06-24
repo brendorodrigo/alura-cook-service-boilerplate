@@ -11,7 +11,7 @@ services:
     networks:
       - alura
     ports:
-      - "5021:5021"
+      - "6099:6099"
     volumes:
       - .:/app
   mongo:
